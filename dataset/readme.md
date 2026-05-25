@@ -1,7 +1,7 @@
 # Sample Output
 
 ## MRI Image
-![MRI Image](images/TCGA_CS_4941_19960909_11.tif)
+![MRI Image]([images/TCGA_CS_4941_19960909_11.tif](https://github.com/Jashed-20/medical-image-segmentation/blob/4e1b623a075853abf1c772847d41a94d60406c3f/images/TCGA_CS_4941_19960909_11.jpg))
 
 ## Mask Image
 ![Mask Image](images/TCGA_CS_4941_19960909_11_mask.tif)
