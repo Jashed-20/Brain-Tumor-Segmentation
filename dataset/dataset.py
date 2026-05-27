@@ -37,6 +37,30 @@ mask_paths = sorted(mask_paths)
 print("Images:", len(image_paths))
 print("Masks:", len(mask_paths))
 
+
+
+for dirname, _, filenames in os.walk(dataset_path):
+
+    for filename in filenames:
+
+        if filename.endswith('.tif') and 'mask' not in filename:
+
+            image_path = os.path.join(dirname, filename)
+            mask_path = image_path.replace('.tif', '_mask.tif')
+
+            if os.path.exists(mask_path):
+
+                mask = cv2.imread(mask_path, 0)
+
+                # REMOVE EMPTY MASKS
+                if np.sum(mask) > 0:
+                    image_paths.append(image_path)
+                    mask_paths.append(mask_path)
+
+print(f'Total usable images: {len(image_paths)}')
+
+
+
 for i in range(2):
 
     image = cv2.imread(image_paths[i])
